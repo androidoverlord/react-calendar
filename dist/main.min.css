@@ -9,6 +9,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 7px;
+}
+.calendar .header .title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  flex-grow: 1;
 }
 .calendar .header .button {
   width: 50px;
@@ -16,6 +23,7 @@
   border: 2px solid red;
   border-radius: 50%;
   display: flex;
+  flex-grow: 0;
   justify-content: center;
   align-items: center;
   line-height: 0;
