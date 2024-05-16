@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "webpack --watch --mode development --config webpack.dev.js"
     },
+    "browserslist": "last 2 versions, > 0.25%",
     "devDependencies": {
         "@babel/core": "^7.15.5",
         "@babel/plugin-proposal-class-properties": "^7.14.5",
