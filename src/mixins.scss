@@ -1,0 +1,66 @@
+@use 'sass:math' as math;
+@use './variables' as variable;
+
+/**
+   * Fix Positioning
+   */
+@mixin fix-position($top: 0, $right: auto, $bottom: auto, $left: 0) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+/**
+   * Absolute Positioning
+   */
+@mixin abs-position($top: 0, $right: auto, $bottom: auto, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+/**
+   * Aspect Ratio
+   */
+
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        padding-top: math.div($height, $width) * 100%;
+    }
+
+    & > * {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+/**
+   * Shorten Text
+   */
+@mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/**
+   * Media Queries
+   */
+
+@mixin screen-size($size) {
+    @media only screen and (min-width: map-get( variable.$breakpoints, #{$size})) {
+        @content;
+    }
+}

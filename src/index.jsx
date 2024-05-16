@@ -11,7 +11,6 @@ import "./index.scss";
 function App() {
     return (
         <React.StrictMode>
-            This is the app
             <Calendar />
         </React.StrictMode>
     );

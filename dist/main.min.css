@@ -1,6 +1,24 @@
 /*!*******************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*******************************************************************************************************************************************************************************/
+/**
+  * sizing
+  */
+/**
+   * Fix Positioning
+   */
+/**
+   * Absolute Positioning
+   */
+/**
+   * Aspect Ratio
+   */
+/**
+   * Shorten Text
+   */
+/**
+   * Media Queries
+   */
 .calendar .header {
   display: flex;
   align-items: center;
@@ -12,10 +30,11 @@
   flex-grow: 1;
 }
 .calendar .header .button {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 1px solid lightgray;
   flex-grow: 0;
+  border-radius: 50%;
   cursor: pointer;
 }
 .calendar .list {
@@ -24,14 +43,45 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  flex-direction: column;
 }
 .calendar .list .item {
   flex: 0 0 auto;
+  padding: 10px;
   outline: 1px solid lightgray;
   background: lightgray;
+  box-sizing: border-box;
+}
+.calendar .list .item:not(.active) {
+  display: none;
 }
 .calendar .list .item.active {
   background: white;
+}
+@media only screen and (min-width: 775px) {
+  .calendar .list {
+    flex-direction: row;
+  }
+  .calendar .list .item {
+    position: relative;
+    max-width: 200px;
+  }
+  .calendar .list .item:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+  }
+  .calendar .list .item > * {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .calendar .list .item:not(.active) {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=main.min.css.map*/
